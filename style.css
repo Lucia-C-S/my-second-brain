@@ -16,11 +16,16 @@
     overflow:hidden;
 }
 
+html, body{
+    background: black;
+}
+
 
 .content{
     position:relative;
     min-height:200vh;
-    background:white;
+    margin-top: 100vh;
+    background:black;
     font-family: monospace;
     text-transform:uppercase;
     font-size: 6rem;
@@ -33,4 +38,13 @@ h1 {
     text-transform:uppercase;
     font-size: 6rem;
     text-align:center;
+    color: white;
+}
+
+.black-overlay{
+    position:fixed;
+    inset:0;
+    background:black;
+    opacity:0;
+    pointer-events:none;
 }
