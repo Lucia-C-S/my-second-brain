@@ -61,30 +61,28 @@ body{
 }
 
 .card{
-
     position:absolute;
 
     width:220px;
-    height:320px;
-
-    border-radius:18px;
-
-    background:white;
-
-    overflow:hidden;
-
-    transform-style:preserve-3d;
-
-    will-change:transform;
+    height:220px;
 
     left:50%;
     top:50%;
 
     margin-left:-110px;
-    margin-top:-160px;
+    margin-top:-110px;
+
+    transform-style:preserve-3d;
+
+    overflow:hidden;
+
+    border-radius:18px;
+
+     --lift:0px;
 
     transition:
-        box-shadow .35s;
+        transform .45s cubic-bezier(.22,1,.36,1),
+        box-shadow .45s;
 }
 
 .card img{

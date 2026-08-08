@@ -28,7 +28,7 @@ const CONFIG = {
 
     // Cards
     cardWidth: 220,
-    cardHeight: 320,
+    cardHeight: 220,
 
     spacing:1.15,
 
@@ -134,16 +134,14 @@ function cardPosition(index) {
 function applyLayout(card, layout){
 
     card.style.transform = `
-
 translate3d(
 ${layout.x}px,
-${layout.y}px,
-${layout.z}px)
-
+${layout.y - (card.matches(':hover') ? 80 : 0)}px,
+${layout.z}px
+)
+rotateY(90deg)
 rotateZ(${layout.rotation}deg)
-
 scale(${layout.scale})
-
 `;
 
     card.style.opacity = layout.opacity;
