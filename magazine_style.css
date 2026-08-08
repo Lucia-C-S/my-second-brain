@@ -1,0 +1,14 @@
+@font-face {
+    font-family: "F2FEntebbe LT Std";
+    src: url("https://db.onlinewebfonts.com/t/44f236e15d0f758a4854bbd3aab3bca3.eot");
+    src: url("https://db.onlinewebfonts.com/t/44f236e15d0f758a4854bbd3aab3bca3.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/44f236e15d0f758a4854bbd3aab3bca3.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/44f236e15d0f758a4854bbd3aab3bca3.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/44f236e15d0f758a4854bbd3aab3bca3.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/44f236e15d0f758a4854bbd3aab3bca3.svg#F2FEntebbe LT Std")format("svg");
+}
+
+h1{
+    font-family: "F2FEntebbe LT Std";
+    font-size: 10rem;
+}

@@ -1,0 +1,97 @@
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html,
+body{
+
+    width:100%;
+    height:100%;
+    overflow:hidden;
+
+    background:#111;
+
+    font-family:sans-serif;
+}
+
+#scene{
+
+    width:100vw;
+    height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    perspective:1900px;
+
+    overflow:hidden;
+}
+
+#camera{
+
+    position:relative;
+
+    width:900px;
+    height:900px;
+
+    transform-style:preserve-3d;
+
+    /*
+        Isometric viewpoint.
+        We'll tune later.
+    */
+
+  transform:
+
+        rotateX(63deg)
+
+        rotateZ(-45deg);
+}
+
+#conveyor{
+
+    position:absolute;
+
+    inset:0;
+
+    transform-style:preserve-3d;
+}
+
+.card{
+
+    position:absolute;
+
+    width:220px;
+    height:320px;
+
+    border-radius:18px;
+
+    background:white;
+
+    overflow:hidden;
+
+    transform-style:preserve-3d;
+
+    will-change:transform;
+
+    left:50%;
+    top:50%;
+
+    margin-left:-110px;
+    margin-top:-160px;
+
+    transition:
+        box-shadow .35s;
+}
+
+.card img{
+
+    width:100%;
+    height:100%;
+    object-fit:cover;
+
+    pointer-events:none;
+}

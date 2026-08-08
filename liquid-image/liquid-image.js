@@ -59,7 +59,7 @@ initFBOs();
 setupEvents();
 render();
 
-loadImage("./images/ice6.jpg");
+loadImage("./media/images/ice6.jpg");
 //createControls();
 
 
