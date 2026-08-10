@@ -78,9 +78,7 @@ body{
     border-radius:18px;
 
      --lift:0px;
-
-    --hover-offset: 0px;
-
+    --hover-offset:0px;
     margin-top: calc(-110px + var(--hover-offset));
 
     transition:
@@ -94,18 +92,6 @@ body{
     object-fit:cover;
 
     pointer-events:none;
-}
-
-.card-inner {
-    width:100%;
-    height:100%;
-
-    transition:
-        transform 0.45s cubic-bezier(.22, 1, .36, 1);
-}
-
-.card:hover {
-    --hover-offset: -80px;
 }
 
 #viewport{

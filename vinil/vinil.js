@@ -41,8 +41,14 @@ const CONFIG = {
     depth: 340,
 
     depthRange:240,
-    compression: 2.3
+    compression: 2.3,
 
+    hoverLift: 130,
+    hoverSpring: 180,
+    hoverDamping: 22,
+    hoverUpX: 0.707,
+    hoverUpY: -0.321,
+    hoverUpZ: 0.630
 
 };
 
@@ -77,6 +83,17 @@ function createCard(src) {
     conveyor.appendChild(card);
 
     state.cards.push(card);
+
+    card.hoverLift = 0;
+card.targetHoverLift = 0;
+
+card.addEventListener("mouseenter", () => {
+    card.targetHoverLift = CONFIG.hoverLift;
+});
+
+card.addEventListener("mouseleave", () => {
+    card.targetHoverLift = 0;
+});
 }
 
 function layoutCard(position){
@@ -131,19 +148,32 @@ function cardPosition(index) {
 
 function applyLayout(card, layout){
 
+    const lift = card.hoverLift;
+
+    const x =
+        layout.x +
+        lift * CONFIG.hoverUpX;
+
+    const y =
+        layout.y +
+        lift * CONFIG.hoverUpY;
+
+    const z =
+        layout.z +
+        lift * CONFIG.hoverUpZ;
+
     card.style.transform = `
-translate3d(
-${layout.x}px,
-${layout.y - (card.matches(':hover') ? 80 : 0)}px,
-${layout.z}px
-)
-rotateY(90deg)
-rotateZ(${layout.rotation}deg)
-scale(${layout.scale})
-`;
+        translate3d(
+            ${x}px,
+            ${y}px,
+            ${z}px
+        )
+        rotateY(90deg)
+        rotateZ(${layout.rotation}deg)
+        scale(${layout.scale})
+    `;
 
     card.style.opacity = layout.opacity;
-
     card.style.zIndex = layout.zIndex;
 }
 
@@ -174,6 +204,13 @@ function animate(){
 state.scrollVelocity *= 0.9;
 
 state.conveyorOffset += state.scrollVelocity;
+for (const card of state.cards) {
+
+    card.hoverLift +=
+        (card.targetHoverLift - card.hoverLift) * 0.18;
+
+}
+
     render();
 
     requestAnimationFrame(animate);
