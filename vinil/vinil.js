@@ -86,33 +86,31 @@ function layoutCard(position){
     const t = position / count;
 const p = easeInOut(t);
 
-const angle = (p - 0.5);
+const angle = (p * 2.2) - 0.6;
 
 const x = angle * CONFIG.pathWidth;
-
 const y = angle * CONFIG.pathHeight;
+const z = angle * CONFIG.depth;
 
-const z = Math.sin(angle * Math.PI) * CONFIG.depth;
-    
     const scale = 1 + (z / CONFIG.depth)*0.08;
     
     const opacity = 0.65 + (1 - p) * 0.35;
     const zIndex = Math.round((1 - p) * 10000);
-    return {
+    
+return {
 
-        x,
-        y,
-        z,
+    x,
+    y,
+    z,
 
-        rotation:0,
+    rotation:0,
 
-        scale,
+    scale,
 
-        opacity,
+    opacity,
 
-        zIndex
-    };
-
+    zIndex,
+};
 }
 
 function mod(x,n){
@@ -147,7 +145,6 @@ scale(${layout.scale})
     card.style.opacity = layout.opacity;
 
     card.style.zIndex = layout.zIndex;
-
 }
 
 function render(){
