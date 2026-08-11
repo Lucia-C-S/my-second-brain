@@ -76,14 +76,7 @@ body{
     overflow:hidden;
 
     border-radius:18px;
-
-     --lift:0px;
-    --hover-offset:0px;
-    margin-top: calc(-110px + var(--hover-offset));
-
-    transition:
-        margin-top 0.45s cubic-bezier(.22, 1, .36, 1);
-}
+ }
 
 .card img{
 
@@ -99,4 +92,33 @@ body{
     height:100vh;
     overflow:hidden;
     position:relative;
+}
+
+.card-wrapper {
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    left: 50%;
+    top: 50%;
+
+    margin-left: -110px;
+    margin-top: -110px;
+
+    transform-style: preserve-3d;
+
+    will-change: transform;
+}
+
+.card {
+    width: 220px;
+    height: 220px;
+
+    overflow: hidden;
+    border-radius: 18px;
+
+    transform-style: preserve-3d;
+
+    will-change: transform;
 }

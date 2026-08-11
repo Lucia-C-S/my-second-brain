@@ -43,12 +43,10 @@ const CONFIG = {
     depthRange:240,
     compression: 2.3,
 
-    hoverLift: 130,
-    hoverSpring: 180,
-    hoverDamping: 22,
-    hoverUpX: 0.707,
-    hoverUpY: -0.321,
-    hoverUpZ: 0.630
+   hoverLift: 65,
+hoverSpring: 45,
+hoverDamping: 12,
+    
 
 };
 
@@ -71,6 +69,9 @@ function easeInOut(t){
 
 function createCard(src) {
 
+    const wrapper = document.createElement("div");
+    wrapper.className = "card-wrapper";
+
     const card = document.createElement("div");
     card.className = "card";
 
@@ -79,21 +80,22 @@ function createCard(src) {
     img.draggable = false;
 
     card.appendChild(img);
+    wrapper.appendChild(card);
+    conveyor.appendChild(wrapper);
 
-    conveyor.appendChild(card);
+    state.cards.push(wrapper);
 
-    state.cards.push(card);
+    wrapper.hoverLift = 0;
+    wrapper.targetHoverLift = 0;
+    wrapper.hoverVelocity = 0;
 
-    card.hoverLift = 0;
-card.targetHoverLift = 0;
+    wrapper.addEventListener("mouseenter", () => {
+        wrapper.targetHoverLift = CONFIG.hoverLift;
+    });
 
-card.addEventListener("mouseenter", () => {
-    card.targetHoverLift = CONFIG.hoverLift;
-});
-
-card.addEventListener("mouseleave", () => {
-    card.targetHoverLift = 0;
-});
+    wrapper.addEventListener("mouseleave", () => {
+        wrapper.targetHoverLift = 0;
+    });
 }
 
 function layoutCard(position){
@@ -109,7 +111,11 @@ const x = angle * CONFIG.pathWidth;
 const y = angle * CONFIG.pathHeight;
 const z = angle * CONFIG.depth;
 
-    const scale = 1 + (z / CONFIG.depth)*0.08;
+    const depth =
+    z / CONFIG.depth;
+
+const scale =
+    0.88 + depth * 0.22;
     
     const opacity = 0.65 + (1 - p) * 0.35;
     const zIndex = Math.round((1 - p) * 10000);
@@ -146,21 +152,13 @@ function cardPosition(index) {
     );
 }
 
-function applyLayout(card, layout){
+function applyLayout(card, layout) {
 
     const lift = card.hoverLift;
 
-    const x =
-        layout.x +
-        lift * CONFIG.hoverUpX;
-
-    const y =
-        layout.y +
-        lift * CONFIG.hoverUpY;
-
-    const z =
-        layout.z +
-        lift * CONFIG.hoverUpZ;
+    const x = layout.x + lift * 0.601;
+    const y = layout.y - lift * 0.601;
+    const z = layout.z + lift * 0.527;
 
     card.style.transform = `
         translate3d(
@@ -201,7 +199,7 @@ window.addEventListener("wheel", e=>{
 
 function animate(){
 
-state.scrollVelocity *= 0.9;
+state.scrollVelocity *= 0.95;
 
 state.conveyorOffset += state.scrollVelocity;
 for (const card of state.cards) {
@@ -218,4 +216,3 @@ for (const card of state.cards) {
 }
 
 animate();
-
