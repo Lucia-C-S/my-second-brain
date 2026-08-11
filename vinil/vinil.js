@@ -1,58 +1,61 @@
 const images = [
-    "media/images/ice1.jpg",
-    "media/images/ice2.jpg",
-    "media/images/ice3.jpg",
-    "media/images/ice4.jpg",
-    "media/images/ice5.jpg",
-    "media/images/ice6.jpg"
+    "../media/images/ice1.jpg",
+    "../media/images/ice2.jpg",
+    "../media/images/ice3.jpg",
+    "../media/images/ice4.jpg",
+    "../media/images/ice5.jpg",
+    "../media/images/ice6.jpg",
+    "../media/images/prueba1.jpg",
+    "../media/images/prueba2.jpg"
 ];
 
 const state = {
-
     cards: [],
-
     conveyorOffset: 0,
-
     scrollVelocity: 0,
-
     autoSpeed: 0.12,
-
     spacing: 1.0
-
 };
 
 const CONFIG = {
-
-    // Camera
     perspective: 1900,
 
-    // Cards
     cardWidth: 220,
     cardHeight: 220,
 
-    spacing:1.15,
+    spacing: 1.15,
 
-     // Conveyor
     autoSpeed: 0.08,
 
-    // Path
     pathWidth: 620,
     pathHeight: 420,
     depth: 340,
 
-    depthRange:240,
+    depthRange: 240,
     compression: 2.3,
 
-   hoverLift: 65,
-hoverSpring: 45,
-hoverDamping: 12,
-    
-
+    hoverLift: 80
 };
 
+// ← add it here
+const HOVER_UP = {
+    x: 0.601,
+    y: -0.601,
+    z: 0.527
+};
+
+// ← and add this here
+const mouse = {
+    x: 0,
+    y: 0
+};
+
+window.addEventListener("pointermove", (e) => {
+    mouse.x = e.clientX;
+    mouse.y = e.clientY;
+});
+
 const conveyor = document.getElementById("conveyor");
-
-
 function init() {
 
     images.forEach(src => {
