@@ -59,3 +59,29 @@ if ("IntersectionObserver" in window) {
 
   sections.forEach((section) => observer.observe(section));
 }
+
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const revealTargets = document.querySelectorAll(
+  ".section-heading, .timeline-entry, .project-card, .learning-note, .ledger-row, .field-item, .recognition-list article, .contact-section > .eyebrow, .contact-section > h2, .contact-copy, .contact-button"
+);
+
+if (!reduceMotion && "IntersectionObserver" in window) {
+  document.documentElement.classList.add("motion-ready");
+
+  revealTargets.forEach((target) => {
+    const siblings = [...target.parentElement.children];
+    const index = siblings.indexOf(target);
+    target.classList.add("reveal");
+    target.style.setProperty("--reveal-delay", `${Math.min(index * 70, 280)}ms`);
+  });
+
+  const revealObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry) => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add("is-visible");
+      observer.unobserve(entry.target);
+    });
+  }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
+
+  revealTargets.forEach((target) => revealObserver.observe(target));
+}
