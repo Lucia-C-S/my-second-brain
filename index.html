@@ -4,199 +4,70 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#f3f0e9">
-  <meta name="description" content="Engineering, learning, and the experiences that shape the work.">
-  <title>Portfolio — Engineering & Everything Else</title>
+  <meta name="description" content="A quick introduction to an engineering portfolio, with focused pages for work, learning, and life beyond engineering.">
+  <title>Portfolio — Engineering, Learning & Experience</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="professional.css">
+  <link rel="stylesheet" href="professional.css?v=3">
   <script src="portfolio.js" defer></script>
 </head>
-<body>
+<body class="overview-page">
   <div class="scroll-progress" aria-hidden="true"><span></span></div>
   <aside class="sidebar" id="sidebar">
-    <a class="brand" href="#top" aria-label="Portfolio home">
-      <span class="brand-mark">L<span>•</span></span>
-      <span class="brand-name">PORTFOLIO<span> / ENGINEERING</span></span>
-    </a>
-    <div class="side-label">INDEX <span>00—08</span></div>
-    <nav class="side-nav" aria-label="Portfolio sections">
-      <a class="nav-link active" href="#top"><span class="nav-index">00</span> Overview</a>
-      <a class="nav-link" href="#visual-archive"><span class="nav-index">01</span> Visual journal</a>
-      <a class="nav-link" href="#motion-studies"><span class="nav-index">02</span> Motion studies</a>
-      <a class="nav-link" href="#timeline"><span class="nav-index">03</span> The timeline</a>
-      <a class="nav-link" href="#work"><span class="nav-index">04</span> Selected work</a>
-      <a class="nav-link" href="#studies"><span class="nav-index">05</span> Studies + courses</a>
-      <a class="nav-link" href="#field-notes"><span class="nav-index">06</span> Activities</a>
-      <a class="nav-link" href="#recognition"><span class="nav-index">07</span> Recognition</a>
-      <a class="nav-link" href="#contact"><span class="nav-index">08</span> Say hello</a>
+    <a class="brand" href="index.html" aria-label="Portfolio home"><span class="brand-mark">L<span>•</span></span><span class="brand-name">PORTFOLIO<span> / ENGINEERING</span></span></a>
+    <nav class="side-nav" aria-label="Main navigation">
+      <a class="nav-link active" href="index.html" aria-current="page">Overview</a>
+      <a class="nav-link" href="work.html">Work</a>
+      <a class="nav-link" href="learning.html">Learning</a>
+      <a class="nav-link" href="beyond.html">Beyond</a>
+      <a class="nav-link nav-contact" href="mailto:hello@example.com">Contact <span>↗</span></a>
     </nav>
-    <div class="sidebar-bottom">
-      <div class="signal"><span class="signal-dot"></span><span>OPEN TO OPPORTUNITIES</span></div>
-      <span class="side-coordinate">ENGINEERING<br>PORTFOLIO / 2026</span>
-      <a class="side-mail" href="mailto:hello@example.com">HELLO@EXAMPLE.COM <span>↗</span></a>
-    </div>
+    <div class="sidebar-bottom"><div class="signal"><span class="signal-dot"></span><span>OPEN TO OPPORTUNITIES</span></div><a class="side-mail" href="mailto:hello@example.com">HELLO@EXAMPLE.COM <span>↗</span></a></div>
   </aside>
 
   <main id="top" class="page-shell">
     <header class="mobile-bar">
-      <a class="brand" href="#top"><span class="brand-mark">L<span>•</span></span><span class="brand-name">PORTFOLIO<span> / ENGINEERING</span></span></a>
+      <a class="brand" href="index.html"><span class="brand-mark">L<span>•</span></span><span class="brand-name">PORTFOLIO<span> / ENGINEERING</span></span></a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="sidebar" aria-label="Open navigation"><span></span><span></span></button>
     </header>
+    <div class="topline"><span>ENGINEERING <i>/</i> EDUCATION <i>/</i> EXPERIENCE</span><span class="topline-date"><span class="signal-dot"></span> QUICK INTRODUCTION</span></div>
 
-    <div class="topline">
-      <span>ENGINEERING <i>/</i> EDUCATION <i>/</i> EXPERIENCE</span>
-      <span class="topline-date"><span class="signal-dot"></span> PORTFOLIO OVERVIEW</span>
-    </div>
-
-    <section class="hero section-pad" aria-labelledby="hero-title">
+    <section class="hero section-pad overview-hero" aria-labelledby="hero-title">
       <div class="hero-copy">
-        <p class="eyebrow"><span class="spark">✳</span> ENGINEERING / EDUCATION / EVERYTHING ELSE</p>
-        <h1 id="hero-title">Curiosity,<br><em>in motion.</em></h1>
-        <p class="hero-intro">A growing record of what I study, make, explore, and bring into the world. The work is only one part of the story.</p>
-        <div class="hero-actions">
-          <a class="button button-primary" href="#visual-archive">ENTER THE JOURNAL <span>↓</span></a>
-          <a class="text-link" href="#work">EXPLORE PROJECTS <span>↘</span></a>
-        </div>
-        <div class="hero-index"><span>SCROLL TO EXPLORE</span><span class="scroll-line"></span><span>01 / 08</span></div>
+        <p class="eyebrow"><span class="spark">✳</span> ENGINEER / BUILDER / LIFELONG LEARNER</p>
+        <h1 id="hero-title">Curiosity,<br><em>put to work.</em></h1>
+        <p class="hero-intro">I’m an engineer interested in turning thoughtful questions into useful things. Here’s the short version; explore a page for the full story.</p>
+        <div class="hero-actions"><a class="button button-primary" href="work.html">SEE WHAT I MAKE <span>↗</span></a><a class="text-link" href="mailto:hello@example.com">SAY HELLO <span>↗</span></a></div>
       </div>
-      <div class="hero-visual" role="img" aria-label="Abstract icy, silver-toned texture">
-        <div class="hero-image"></div>
-        <figure class="hero-photo-inset"><img src="media/images/prueba1.jpg" alt="Detail from the personal image archive"><figcaption>FIELD NOTE / 001</figcaption></figure>
-        <div class="hero-visual-grid"></div>
-        <div class="frame-corner corner-tl"></div><div class="frame-corner corner-br"></div>
-        <div class="visual-label"><span>PERSONAL ARCHIVE / 01</span><span>STUDY · DETAIL · PROCESS</span></div>
-        <div class="visual-crosshair" aria-hidden="true">✳</div>
-        <div class="visual-stamp">ALWAYS<br>IN PROGRESS</div>
-      </div>
-      <div class="hero-footnote"><span>AN OPEN NOTEBOOK</span><span>ENGINEERING · CURIOSITY · LIFE</span><span>⌄</span></div>
-    </section>
-
-    <section class="signal-strip" aria-label="Archive categories">
-      <span>ENGINEERING</span><span class="strip-star">✳</span><span>LEARNING</span><span class="strip-star">✳</span><span>MAKING</span><span class="strip-star">✳</span><span>EXPLORING</span><span class="strip-star">✳</span><span>GROWING</span>
-    </section>
-
-    <section class="visual-archive section-pad" id="visual-archive">
-      <div class="section-heading archive-heading">
-        <div><p class="eyebrow">A VISUAL JOURNAL / 01—03</p><h2>Little things, <em>closely seen.</em></h2></div>
-        <p class="section-aside">Collected from the image archive.<br>More than one way to see a detail.</p>
-      </div>
-      <div class="photo-gallery">
-        <figure class="gallery-frame gallery-tall"><img src="media/images/ice2.JPG" alt="Icy abstract texture from the image archive" loading="lazy"><figcaption><span>01 / SURFACE STUDY</span><span>ICE SERIES</span></figcaption></figure>
-        <figure class="gallery-frame gallery-wide"><img src="media/images/prueba2.jpg" alt="Visual study from the personal image archive" loading="lazy"><figcaption><span>02 / FORM STUDY</span><span>IMAGE ARCHIVE</span></figcaption></figure>
-        <figure class="gallery-frame gallery-small"><img src="media/images/ice4.JPG" alt="Silver-toned detail from the ice image series" loading="lazy"><figcaption><span>03 / LIGHT STUDY</span><span>ICE SERIES</span></figcaption></figure>
-      </div>
-      <div class="archive-caption"><span>AN IMAGE CAN BE A QUESTION, TOO.</span><span>SCROLL FOR MOTION <i>↓</i></span></div>
-    </section>
-
-    <section class="motion-section section-pad" id="motion-studies">
-      <div class="section-heading">
-        <div><p class="eyebrow">MOTION STUDIES / FROM THE VIDEO ARCHIVE</p><h2>Some ideas need <em>movement.</em></h2></div>
-        <p class="section-aside">Short loops from the archive.<br>Pause any clip whenever you like.</p>
-      </div>
-      <div class="motion-grid">
-        <article class="motion-tile motion-featured">
-           <video id="motion-video-1" class="archive-video" muted loop playsinline preload="metadata" poster="media/images/ice1.JPG" aria-label="Looping motion study from the video archive"><source src="media/video/simple_1.mp4" type="video/mp4"></video>
-          <div class="motion-overlay"><span class="motion-index">01 / MOTION STUDY</span><h3>Patterns in motion</h3><button class="video-toggle" type="button" data-video-toggle data-video-name="motion study 1" aria-controls="motion-video-1" aria-label="Play motion study 1" aria-pressed="false"><span>▶</span></button></div>
-        </article>
-        <article class="motion-tile">
-           <video id="motion-video-2" class="archive-video" muted loop playsinline preload="metadata" poster="media/images/ice3.JPG" aria-label="Looping process study from the video archive"><source src="media/video/simple_2.mp4" type="video/mp4"></video>
-          <div class="motion-overlay"><span class="motion-index">02 / PROCESS NOTE</span><h3>Details that connect</h3><button class="video-toggle" type="button" data-video-toggle data-video-name="process note 2" aria-controls="motion-video-2" aria-label="Play process note 2" aria-pressed="false"><span>▶</span></button></div>
-        </article>
-        <article class="motion-tile">
-           <video id="motion-video-3" class="archive-video" muted loop playsinline preload="metadata" poster="media/images/ice5.JPG" aria-label="Looping visual experiment from the video archive"><source src="media/video/system_alert_1.mp4" type="video/mp4"></video>
-          <div class="motion-overlay"><span class="motion-index">03 / VISUAL EXPERIMENT</span><h3>Unexpected signals</h3><button class="video-toggle" type="button" data-video-toggle data-video-name="visual experiment 3" aria-controls="motion-video-3" aria-label="Play visual experiment 3" aria-pressed="false"><span>▶</span></button></div>
-        </article>
-      </div>
-      <p class="motion-note"><span class="signal-dot"></span> VIDEOS PLAY MUTED WHILE VISIBLE · USE THE CONTROL TO PAUSE</p>
-    </section>
-
-    <section class="section section-pad" id="timeline">
-      <div class="section-heading">
-        <div><p class="eyebrow">03 / EXPERIENCE</p><h2>A record of <em>progress.</em></h2></div>
-        <p class="section-aside">Education, projects, and milestones<br>that have shaped my path.</p>
-      </div>
-      <div class="filter-row" role="group" aria-label="Filter timeline entries">
-        <span class="filter-label">TRACE BY</span>
-        <button class="filter-button active" type="button" data-filter="all" aria-pressed="true">ALL <span>06</span></button>
-        <button class="filter-button" type="button" data-filter="study" aria-pressed="false">STUDY <span>02</span></button>
-        <button class="filter-button" type="button" data-filter="build" aria-pressed="false">BUILDS <span>02</span></button>
-        <button class="filter-button" type="button" data-filter="life" aria-pressed="false">LIFE <span>02</span></button>
-      </div>
-      <div class="timeline-list">
-        <article class="timeline-entry" data-category="study"><span class="timeline-year">20XX <i>— 20XX</i></span><span class="timeline-node"></span><div class="timeline-content"><div class="entry-meta"><span>EDUCATION / FOUNDATIONS</span><span>ENGINEERING</span></div><h3>Engineering studies</h3><p>Degree or program · institution · areas of focus.</p><div class="tag-row"><span>DISCIPLINE</span><span>INSTITUTION</span></div></div><span class="entry-mark">01</span></article>
-        <article class="timeline-entry" data-category="build"><span class="timeline-year">20XX</span><span class="timeline-node"></span><div class="timeline-content"><div class="entry-meta"><span>PROJECT / PROTOTYPE</span><span>DESIGN & DEVELOPMENT</span></div><h3>Prototype or course project</h3><p>Project objective · personal contribution · technical outcome.</p><div class="tag-row"><span>PROJECT</span><span>TECHNOLOGIES</span></div></div><span class="entry-mark">02</span></article>
-        <article class="timeline-entry" data-category="life"><span class="timeline-year">20XX</span><span class="timeline-node"></span><div class="timeline-content"><div class="entry-meta"><span>COMMUNITY / EXPERIENCE</span><span>ACTIVITIES</span></div><h3>Community and leadership</h3><p>Organization or activity · role · contribution.</p><div class="tag-row"><span>ORGANIZATION</span><span>ROLE</span></div></div><span class="entry-mark">03</span></article>
-        <article class="timeline-entry" data-category="study"><span class="timeline-year">20XX</span><span class="timeline-node"></span><div class="timeline-content"><div class="entry-meta"><span>EDUCATION / SPECIALIZATION</span><span>CONTINUED LEARNING</span></div><h3>Advanced study and research</h3><p>Specialization, research area, independent study, or additional coursework.</p><div class="tag-row"><span>AREA OF STUDY</span><span>RESEARCH</span></div></div><span class="entry-mark">04</span></article>
-        <article class="timeline-entry" data-category="build"><span class="timeline-year">20XX</span><span class="timeline-node"></span><div class="timeline-content"><div class="entry-meta"><span>COMPETITION / COLLABORATION</span><span>TEAM PROJECT</span></div><h3>Competition or team project</h3><p>Challenge or event · team contribution · result or recognition.</p><div class="tag-row"><span>ROLE</span><span>OUTCOME</span></div></div><span class="entry-mark">05</span></article>
-        <article class="timeline-entry" data-category="life"><span class="timeline-year">NOW</span><span class="timeline-node"></span><div class="timeline-content"><div class="entry-meta"><span>IN PROGRESS / CURRENT FOCUS</span><span class="live-label"><i></i> CURRENT</span></div><h3>Current interests</h3><p>Current studies, personal projects, and areas of exploration.</p><div class="tag-row"><span>IN PROGRESS</span><span>AREAS OF INTEREST</span></div></div><span class="entry-mark">06</span></article>
-      </div>
-      <p class="filter-empty" hidden>No moments in this signal yet.</p>
-    </section>
-
-    <section class="work-section section-pad" id="work">
-      <div class="section-heading">
-        <div><p class="eyebrow">04 / SELECTED WORK</p><h2>Ideas made <em>tangible.</em></h2></div>
-        <a class="text-link" href="#contact">DISCUSS A PROJECT <span>↗</span></a>
-      </div>
-      <div class="project-grid">
-        <article class="project-card project-featured"><div class="project-art art-circuit"><div class="circuit-label">SYSTEM / 001</div><div class="circuit-orbit orbit-one"></div><div class="circuit-orbit orbit-two"></div><span class="circuit-core">✳</span><span class="circuit-coordinate">DESIGN · ANALYSIS · BUILD</span><span class="art-number">01</span></div><div class="project-info"><div class="project-meta"><span>ENGINEERING / PROJECT</span><span>20XX — PRESENT</span></div><h3>Featured engineering project</h3><p>Project objective · design approach · measurable outcome.</p><div class="project-footer"><span>ROLE / TOOLS / OUTCOME</span><a href="#contact" aria-label="Ask about this project">↗</a></div></div></article>
-        <article class="project-card"><div class="project-art art-grid"><div class="grid-figure"><span>+<br>+</span><i></i></div><span class="art-side-label">TEST / ITERATE / REFINE</span><span class="art-number">02</span></div><div class="project-info"><div class="project-meta"><span>COMPETITION / TEAM</span><span>20XX</span></div><h3>Competition project</h3><p>Challenge brief · team contribution · final result.</p><div class="project-footer"><span>TEAM / OUTCOME</span><a href="#recognition" aria-label="See recognition">↗</a></div></div></article>
-        <article class="project-card"><div class="project-art art-wave"><div class="wave-graphic"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><span class="art-side-label">RESEARCH / CONCEPT</span><span class="art-number">03</span></div><div class="project-info"><div class="project-meta"><span>PROPOSAL / INITIATIVE</span><span>20XX</span></div><h3>Research or event proposal</h3><p>Proposal summary · intended impact · current status.</p><div class="project-footer"><span>OBJECTIVE / NEXT STEP</span><a href="#contact" aria-label="Discuss this proposal">↗</a></div></div></article>
+      <div class="hero-visual">
+        <div class="hero-image"></div><figure class="hero-photo-inset"><img src="media/images/prueba1.jpg" alt="Detail from the image archive"><figcaption>FIELD NOTE / 001</figcaption></figure><div class="hero-visual-grid"></div><div class="frame-corner corner-tl"></div><div class="frame-corner corner-br"></div><div class="visual-label"><span>PERSONAL ARCHIVE</span><span>STUDY · DETAIL · PROCESS</span></div><div class="visual-crosshair" aria-hidden="true">✳</div>
       </div>
     </section>
 
-    <section class="learning-section section-pad" id="studies">
-      <div class="section-heading">
-        <div><p class="eyebrow">05 / EDUCATION</p><h2>Learning in <em>practice.</em></h2></div>
-        <p class="section-aside">Formal study and independent learning,<br>side by side.</p>
-      </div>
-      <div class="learning-layout">
-        <div class="learning-note"><span class="note-star">✳</span><p>“The most useful thing I know is how much there is left to learn.”</p><span class="note-caption">A WORKING PRINCIPLE / 001</span><div class="note-lines"></div></div>
-        <div class="learning-ledger">
-          <div class="ledger-head"><span>STUDY / COURSE / WORKSHOP</span><span>WHEN</span><span>STATUS</span></div>
-          <div class="ledger-row"><span><i>01</i><b>Degree or program</b><small>Institution · area of focus</small></span><span>20XX — NOW</span><span class="status-current">IN PROGRESS</span></div>
-          <div class="ledger-row"><span><i>02</i><b>Technical coursework</b><small>Provider · subject area</small></span><span>20XX</span><span>COMPLETED</span></div>
-          <div class="ledger-row"><span><i>03</i><b>Additional class or certification</b><small>Provider · skills developed</small></span><span>20XX</span><span>COMPLETED</span></div>
-          <div class="ledger-row"><span><i>04</i><b>Independent study</b><small>Subject · current focus</small></span><span>NOW</span><span class="status-current">IN PROGRESS</span></div>
-          <div class="ledger-foot"><span>EDUCATION & CONTINUED LEARNING</span><span>COURSES · WORKSHOPS · STUDY <i>↘</i></span></div>
-        </div>
+    <section class="overview-glance section-pad" aria-labelledby="glance-title">
+      <div class="overview-section-heading"><div><p class="eyebrow">THE SHORT VERSION</p><h2 id="glance-title">Three things to <em>know.</em></h2></div><p>A snapshot today. The details live one click away.</p></div>
+      <div class="glance-grid">
+        <a class="glance-item" href="learning.html"><span class="glance-number">01</span><span class="glance-label">WHAT I STUDY</span><strong>Your engineering field</strong><span class="glance-detail">Program, focus & courses <b>↗</b></span></a>
+        <a class="glance-item" href="work.html"><span class="glance-number">02</span><span class="glance-label">WHAT I MAKE</span><strong>Projects with purpose</strong><span class="glance-detail">Design, process & outcomes <b>↗</b></span></a>
+        <a class="glance-item" href="beyond.html"><span class="glance-number">03</span><span class="glance-label">WHAT ELSE MATTERS</span><strong>People, places & ideas</strong><span class="glance-detail">Activities & life outside work <b>↗</b></span></a>
       </div>
     </section>
 
-    <section class="field-section section-pad" id="field-notes">
-      <div class="section-heading">
-        <div><p class="eyebrow">06 / BEYOND ENGINEERING</p><h2>People, practice, <em>perspective.</em></h2></div>
-        <p class="section-aside">Community and interests<br>inform how I work.</p>
-      </div>
-      <div class="field-grid">
-        <article class="field-item"><span class="field-icon">✳</span><div><span class="field-type">01 / COMMUNITY</span><h3>Leadership and service</h3><p>Organization · position · contributions and outcomes.</p></div><span class="field-arrow">↗</span></article>
-        <article class="field-item"><span class="field-icon">⌁</span><div><span class="field-type">02 / PERSONAL DEVELOPMENT</span><h3>Interests and extra classes</h3><p>Course or activity · time invested · skills developed.</p></div><span class="field-arrow">↗</span></article>
-        <article class="field-item"><span class="field-icon">⟡</span><div><span class="field-type">03 / EVENTS</span><h3>Conferences and key events</h3><p>Event · participation or contribution · key takeaway.</p></div><span class="field-arrow">↗</span></article>
-        <article class="field-item"><span class="field-icon">↗</span><div><span class="field-type">04 / INITIATIVES</span><h3>Proposals and collaborations</h3><p>Initiative · collaborators · impact or next steps.</p></div><span class="field-arrow">↗</span></article>
-      </div>
+    <section class="overview-feature section-pad" aria-labelledby="featured-title">
+      <div class="overview-section-heading"><div><p class="eyebrow">A CLOSER LOOK</p><h2 id="featured-title">Selected <em>work.</em></h2></div><a class="text-link" href="work.html">ALL PROJECTS <span>↗</span></a></div>
+      <a class="featured-link" href="work.html">
+        <img src="media/images/ice6.JPG" alt="Silver-toned visual from the project archive" loading="lazy">
+        <span class="featured-overlay"><span class="eyebrow">FEATURED PROJECT / 01</span><strong>Add your project title here</strong><span>One sentence on the problem, your contribution, and the result.</span><b>EXPLORE PROJECTS ↗</b></span>
+      </a>
     </section>
 
-    <section class="recognition-section section-pad" id="recognition">
-      <div class="section-heading">
-        <div><p class="eyebrow">07 / RECOGNITION</p><h2>Milestones and <em>awards.</em></h2></div>
-        <span class="award-count"><b>—</b> HONORS, AWARDS & COMPETITIONS</span>
-      </div>
-      <div class="recognition-list">
-        <article><span class="award-year">20XX</span><span class="award-symbol">✳</span><div><h3>Award or distinction</h3><p>Issuing organization · recognition criteria</p></div><span class="award-type">AWARD</span><span class="award-arrow">↗</span></article>
-        <article><span class="award-year">20XX</span><span class="award-symbol">⟡</span><div><h3>Competition placement</h3><p>Competition · category · team or individual</p></div><span class="award-type">COMPETITION</span><span class="award-arrow">↗</span></article>
-        <article><span class="award-year">20XX</span><span class="award-symbol">⌁</span><div><h3>Scholarship or professional milestone</h3><p>Issuing organization · field or achievement</p></div><span class="award-type">MILESTONE</span><span class="award-arrow">↗</span></article>
-      </div>
+    <section class="overview-routes section-pad" aria-label="Explore portfolio pages">
+      <a class="route-link" href="learning.html"><span>LEARNING & EXPERIENCE</span><strong>How I got here</strong><span>Studies, courses, milestones, and recognition.</span><b>VIEW MY JOURNEY ↗</b></a>
+      <a class="route-link" href="beyond.html"><span>BEYOND ENGINEERING</span><strong>The rest of the story</strong><span>Activities, events, interests, and visual notes.</span><b>GET TO KNOW ME ↗</b></a>
     </section>
 
-    <footer class="contact-section section-pad" id="contact">
-      <div class="contact-orbit" aria-hidden="true"><span>✳</span><i></i><b></b></div>
-      <p class="eyebrow">08 / CONTACT</p>
-      <h2>Let's build<br>something <em>meaningful.</em></h2>
-      <p class="contact-copy">For project opportunities, collaboration, or a conversation about engineering, get in touch.</p>
-      <a class="button button-primary contact-button" href="mailto:hello@example.com">GET IN TOUCH <span>↗</span></a>
-      <div class="footer-bottom"><a class="brand" href="#top"><span class="brand-mark">L<span>•</span></span><span class="brand-name">PORTFOLIO<span> / ENGINEERING</span></span></a><span>ENGINEERING · EDUCATION · EXPERIENCE</span><a href="#top">BACK TO TOP ↑</a></div>
-    </footer>
+    <footer class="overview-footer"><a class="brand" href="index.html"><span class="brand-mark">L<span>•</span></span><span class="brand-name">PORTFOLIO<span> / ENGINEERING</span></span></a><span>THANKS FOR TAKING A LOOK.</span><a href="mailto:hello@example.com">CONTACT ME <b>↗</b></a></footer>
   </main>
 </body>
 </html>
