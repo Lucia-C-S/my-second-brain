@@ -62,7 +62,7 @@ if ("IntersectionObserver" in window) {
 
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const revealTargets = document.querySelectorAll(
-  ".section-heading, .timeline-entry, .project-card, .learning-note, .ledger-row, .field-item, .recognition-list article, .contact-section > .eyebrow, .contact-section > h2, .contact-copy, .contact-button"
+  ".section-heading, .gallery-frame, .archive-caption, .motion-tile, .motion-note, .timeline-entry, .project-card, .learning-note, .ledger-row, .field-item, .recognition-list article, .contact-section > .eyebrow, .contact-section > h2, .contact-copy, .contact-button"
 );
 
 if (!reduceMotion && "IntersectionObserver" in window) {
@@ -85,3 +85,65 @@ if (!reduceMotion && "IntersectionObserver" in window) {
 
   revealTargets.forEach((target) => revealObserver.observe(target));
 }
+
+const archiveVideos = [...document.querySelectorAll(".archive-video")];
+const videoButtons = document.querySelectorAll("[data-video-toggle]");
+
+function updateVideoButton(video) {
+  const button = document.querySelector(`[aria-controls="${video.id}"]`);
+  if (!button) return;
+
+  const isPlaying = !video.paused;
+  button.setAttribute("aria-pressed", String(isPlaying));
+  button.setAttribute("aria-label", `${isPlaying ? "Pause" : "Play"} ${button.dataset.videoName}`);
+  button.querySelector("span").textContent = isPlaying ? "Ⅱ" : "▶";
+}
+
+archiveVideos.forEach((video) => {
+  video.addEventListener("play", () => updateVideoButton(video));
+  video.addEventListener("pause", () => updateVideoButton(video));
+});
+
+videoButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    const video = document.getElementById(button.getAttribute("aria-controls"));
+    if (video.paused) {
+      delete video.dataset.userPaused;
+      video.play().catch(() => {});
+    } else {
+      video.dataset.userPaused = "true";
+      video.pause();
+    }
+  });
+});
+
+if ("IntersectionObserver" in window) {
+  const videoObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      const video = entry.target;
+      if (!entry.isIntersecting || document.visibilityState !== "visible") {
+        video.pause();
+      } else if (!reduceMotion && !video.dataset.userPaused) {
+        video.play().catch(() => {});
+      }
+    });
+  }, { threshold: 0.4 });
+
+  archiveVideos.forEach((video) => videoObserver.observe(video));
+}
+
+document.addEventListener("visibilitychange", () => {
+  if (document.visibilityState === "hidden") {
+    archiveVideos.forEach((video) => video.pause());
+  }
+});
+
+function updateScrollProgress() {
+  const scrollableHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = scrollableHeight > 0 ? (window.scrollY / scrollableHeight) * 100 : 0;
+  document.documentElement.style.setProperty("--scroll-progress", `${progress}%`);
+}
+
+window.addEventListener("scroll", updateScrollProgress, { passive: true });
+window.addEventListener("resize", updateScrollProgress);
+updateScrollProgress();
